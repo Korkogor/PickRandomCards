@@ -8,6 +8,7 @@ namespace PickRandomCards
 {
     internal class CardPicker
     {
+        static Random Random = new Random(); // Генератор случайных чисел
         //Создан метод для набора карт
         public static string[] PickSomeCards (int numberOfCards)
         {
@@ -23,12 +24,26 @@ namespace PickRandomCards
 
         private static string RandomValue()
         {
-            throw new NotImplementedException();
+            int value = Random.Next(1, 14); // получить случайное число от 1 до 13
+            if (value == 1) return "Ace"; // если это единица - вернуть "Туз"
+            if (value == 11) return "Jack"; // если это 11 - вернуть "Валет"
+            if (value == 12) return "Queen"; // если это 12 - вернуть "Дама"
+            if (value == 13) return "King"; // если это 13 - вернуть "Король"
+            return value.ToString();  // этот пункт необходим, чтобы вернуть значение от 2 до 10 в виде строки и отобразить её.
         }
 
         private static string RandomSuit()
         {
-            throw new NotImplementedException();
+            //получить случайное число от 1 до 4
+            int value = Random.Next(1, 5);
+            // если это 1, вернуть строку Spades
+            if (value == 1) return "Spades";
+            // если это 2, вернуть строку Heartsчё
+            if (value == 2) return "Hearts";
+            //если это 3, вернуть строку Clubs
+            if (value == 3) return "Clubs";
+            // если выполнение продолжается, вернуть строку Diamonds
+            return "Diamonds";
         }
     }
 }
