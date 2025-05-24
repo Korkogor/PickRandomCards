@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//Создан новый класс
+//Создано новое поле имён
 namespace PickRandomCards
 {
+    //Создан новый класс
     internal class CardPicker
     {
         static Random Random = new Random(); // Генератор случайных чисел
@@ -21,7 +22,7 @@ namespace PickRandomCards
             }
             return pickedCards;
         }
-
+        //Создан метод для подбора "веса" карт
         private static string RandomValue()
         {
             int value = Random.Next(1, 14); // получить случайное число от 1 до 13
@@ -31,7 +32,7 @@ namespace PickRandomCards
             if (value == 13) return "King"; // если это 13 - вернуть "Король"
             return value.ToString();  // этот пункт необходим, чтобы вернуть значение от 2 до 10 в виде строки и отобразить её.
         }
-
+        // Создан метод для подбора рубашки карт
         private static string RandomSuit()
         {
             //получить случайное число от 1 до 4
