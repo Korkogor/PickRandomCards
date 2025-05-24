@@ -1,4 +1,6 @@
-﻿static void Main(string[] args)
+﻿using PickRandomCards;
+
+static void Main(string[] args)
 {
     Console.Write("Enter the number of cards to pick: ");
     string line = Console.ReadLine();
@@ -7,12 +9,15 @@
     {
         // этот блок выполняется в тому случае, если строка МОЖЕТ БЫТЬ преобразована в int
         // значение, сохраняемое в новой переменной, называется numberOfCards
+        foreach (string card in CardPicker.PickSomeCards(numberOfCards))
+        {
 
+        }
 
     }
     else
     {
         //этот блок выполняется, если строка НЕ МОЖЕТ БЫТЬ преобразована в int
-        Console.WriteLine("Пожалуйста, введите число");
+        Console.WriteLine("Введённое значение не подходит. Пожалуйста, введите число");
     }
 }
